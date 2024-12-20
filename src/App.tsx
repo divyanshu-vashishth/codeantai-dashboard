@@ -1,14 +1,16 @@
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import { useState } from 'react';
-import { Sidebar } from './ecomponents/Sidebar';
-import { Repositories } from './epages/Repositories';
+import { Sidebar } from './components/Sidebar';
+import  Repositories  from './pages/Repositories';
 import SignInPage from './pages/SignInPage';
 
 import './App.css';
+import { useMobile } from './hooks/useMobile';
+import { MobileHeader } from './components/MobileHeader';
 
 export const App = () => {
-  // This would normally come from your auth state management
-  const [isAuthenticated, setIsAuthenticated] = useState(true);
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const isMobile = useMobile();
 
   return (
     <Router>
@@ -17,7 +19,7 @@ export const App = () => {
           path="/sign-in" 
           element={
             !isAuthenticated ? (
-              <SignInPage />
+              <SignInPage setIsAuthenticated={setIsAuthenticated} />
             ) : (
               <Navigate to="/repositories" replace />
             )
@@ -29,7 +31,8 @@ export const App = () => {
           element={
             isAuthenticated ? (
               <div className="app">
-                <Sidebar />
+                {isMobile && <MobileHeader setIsAuthenticated={setIsAuthenticated} />}
+                {!isMobile && <Sidebar setIsAuthenticated={setIsAuthenticated} />}
                 <main className="main-content">
                   <Routes>
                     <Route path="/repositories" element={<Repositories />} />

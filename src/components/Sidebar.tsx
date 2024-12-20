@@ -1,15 +1,26 @@
 import { useState } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { ChevronDown, Menu } from 'react-feather';
 import './Sidebar.css';
 import { Home, Code, Cloud, HelpCircle, Settings, PhoneCall , LogOut } from 'react-feather';
 
 import Logo from '../assets/logo.svg';
 
-export const Sidebar = () => {
+interface SidebarProps {
+  setIsAuthenticated: (value: boolean) => void;
+}
+
+export const Sidebar = ({ setIsAuthenticated }: SidebarProps) => {
   const [isOpen, setIsOpen] = useState(false);
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const location = useLocation();
+  const navigate = useNavigate();
   
+  const handleLogout = () => {
+    setIsAuthenticated(false);
+    navigate('/sign-in');
+  };
+
   const navigation = [
     { path: '/repositories', icon: Home, label: 'Repositories', isActive: true },
     { path: '/code-review', icon: Code, label: 'AI Code Review' },
@@ -20,7 +31,7 @@ export const Sidebar = () => {
 
   const bottomNav = [
     { path: '/support', icon: PhoneCall, label: 'Support' },
-    { path: '/logout', icon: LogOut, label: 'Logout' },
+    { label: 'Logout', icon: LogOut, onClick: handleLogout },
   ];
 
   return (
@@ -31,10 +42,22 @@ export const Sidebar = () => {
             <img src={Logo} alt="CodeAnt AI" />
             <span>CodeAnt AI</span>
           </div>
-          <button className="user-dropdown">
-            <span>UtkarshDhairyaPanwar</span>
-            <ChevronDown size={16} />
-          </button>
+          <div className="dropdown-container">
+            <button 
+              className="user-dropdown"
+              onClick={() => setIsDropdownOpen(!isDropdownOpen)}
+            >
+              <span>UtkarshDhairyaPanwar</span>
+              <ChevronDown size={16} />
+            </button>
+            {isDropdownOpen && (
+              <div className="dropdown-menu">
+                <a href="/profile">Profile</a>
+                <a href="/settings">Settings</a>
+                <a href="/logout">Logout</a>
+              </div>
+            )}
+          </div>
         </div>
 
         <nav className="sidebar-nav">
@@ -44,7 +67,6 @@ export const Sidebar = () => {
               to={item.path}
               className={`nav-item ${location.pathname === item.path ? 'active' : ''}`}
             >
-              {/* <img src={item.icon} alt="" className="nav-icon" /> */}
               <item.icon className="nav-icon" />
               <span>{item.label}</span>
             </Link>
@@ -53,15 +75,25 @@ export const Sidebar = () => {
 
         <nav className="sidebar-nav bottom">
           {bottomNav.map((item) => (
-            <Link
-              key={item.path}
-              to={item.path}
-              className="nav-item"
-            >
-              {/* <img src={item.icon} alt="" className="nav-icon" /> */}
-              <item.icon className="nav-icon" />
-              <span>{item.label}</span>
-            </Link>
+            item.onClick ? (
+              <button
+                key={item.label}
+                onClick={item.onClick}
+                className="nav-item"
+              >
+                <item.icon className="nav-icon" />
+                <span>{item.label}</span>
+              </button>
+            ) : (
+              <Link
+                key={item.path}
+                to={item.path!}
+                className="nav-item"
+              >
+                <item.icon className="nav-icon" />
+                <span>{item.label}</span>
+              </Link>
+            )
           ))}
         </nav>
       </div>

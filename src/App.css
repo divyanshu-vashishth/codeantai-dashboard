@@ -30,17 +30,23 @@ body {
 .app {
   display: flex;
   min-height: 100vh;
+  position: relative;
+  z-index: 1;
 }
 
 .main-content {
   flex: 1;
+  margin-left: 242px;
   background: var(--gray-50);
   min-height: 100vh;
+  padding: 2rem;
 }
 
 @media (max-width: 768px) {
   .main-content {
     margin-left: 0;
+    padding: 1rem;
+    padding-top: calc(60px + 1rem); 
   }
 }
 

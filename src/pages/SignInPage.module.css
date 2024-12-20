@@ -5,7 +5,7 @@
 }
 
 .leftSection {
-  display: none; /* Hide by default on mobile */
+  display: none; 
   position: relative;
   padding: 2rem;
   background-color: #ffffff;
@@ -13,7 +13,7 @@
 
 .rightSection {
   flex: 1;
-  min-height: 100vh; /* Full height on mobile */
+  min-height: 100vh; 
   padding: 1.5rem;
   background-color: #fafafa;
   display: flex;
@@ -268,15 +268,15 @@
   }
   
   .leftSection {
-    display: flex; /* Show on desktop */
+    display: flex; 
     align-items: center;
     justify-content: center;
-    width: 50%; /* Slightly smaller than right section */
+    width: 50%; 
   }
   
   .rightSection {
-    width: 50%; /* Slightly larger than left section */
-    min-height: auto; /* Reset min-height */
+    width: 50%; 
+    min-height: auto; 
   }
 }
 
