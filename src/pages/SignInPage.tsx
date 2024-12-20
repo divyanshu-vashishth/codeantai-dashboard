@@ -8,7 +8,7 @@ import bitbucket from "../assets/bitbucket.svg";
 import azure from "../assets/azure.svg";
 import authKey from "../assets/auth-key.svg";
 import styles from "./SignInPage.module.css";
-
+import leftIcon from "../assets/left-icon.svg";
 export default function SignInPage() {
   const [activeTab, setActiveTab] = useState("saas");
 
@@ -16,7 +16,8 @@ export default function SignInPage() {
     <div className={styles.pageContainer}>
       <div className={styles.leftSection}>
         <div className={styles.cardContainer}>
-          <div className={`${styles.card} ${styles.statsCard}`}>
+          <img src={leftIcon} alt="CodeAnt AI"  />
+          {/* <div className={`${styles.card} ${styles.statsCard}`}>
             <div className={styles.cardContent}>
               <div className={styles.logoContainer}>
                 <img src={logo} alt="CodeAnt AI" className={styles.logo} />
@@ -46,7 +47,7 @@ export default function SignInPage() {
               <div className={styles.issuesValue}>500K+</div>
               <div className={styles.issuesIncrease}>↑ 14% This week</div>
             </div>
-          </div>
+          </div> */}
         </div>
         <div className={styles.grayLogoContainer}>
           <img src={grayLogo} alt="CodeAnt AI" className={styles.grayLogo} />
@@ -55,7 +56,10 @@ export default function SignInPage() {
       <div className={styles.rightSection}>
         <div className={styles.signInCard}>
           <div className={styles.cardHeader}>
-            <img src={logo} alt="CodeAnt AI" className={styles.headerLogo} />
+            <div className={styles.logoWithText}>
+              <img src={logo} alt="CodeAnt AI" className={styles.headerLogo} />
+              <span className={styles.brandName}>CodeAnt AI</span>
+            </div>
             <h2 className={styles.headerTitle}>Welcome to CodeAnt AI</h2>
           </div>
           <div className={styles.cardContent}>

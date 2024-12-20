@@ -5,10 +5,17 @@
 }
 
 .leftSection {
+  display: none; /* Hide by default on mobile */
   position: relative;
-  flex: 1;
-  background-color: #f3f4f6;
   padding: 2rem;
+  background-color: #ffffff;
+}
+
+.rightSection {
+  flex: 1;
+  min-height: 100vh; /* Full height on mobile */
+  padding: 1.5rem;
+  background-color: #fafafa;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -17,8 +24,8 @@
 .cardContainer {
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
-  max-width: 24rem;
+  /* gap: 1.5rem; */
+  max-width: 32rem;
   width: 100%;
 }
 
@@ -30,7 +37,7 @@
 }
 
 .grayLogo {
-  width: 300px;
+  width: 280px;
   height: auto;
 }
 
@@ -70,8 +77,10 @@
 }
 
 .logoText {
-  font-weight: 600;
-  font-size: 1rem;
+  font-family: 'Satoshi', sans-serif;
+  font-weight: 500;
+  font-size: 1.125rem;
+  color: #111827;
 }
 
 .statsGrid {
@@ -119,65 +128,91 @@
   font-weight: 600;
 }
 
-.rightSection {
-  flex: 1;
-  /* padding: 1.5rem; */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: var(--background);
-}
-
 .signInCard {
   width: 100%;
-  max-width: 24rem;
-  padding: 2rem;
+  max-width: 32rem;
+  padding: 2.5rem;
+  background-color: #ffffff;
+  border-radius: 1rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
 }
 
 .cardHeader {
   text-align: center;
-  margin-bottom: 2rem;
+  margin-bottom: 2.5rem;
+}
+
+.logoWithText {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
 }
 
 .headerLogo {
-  width: 3rem;
-  height: 3rem;
-  margin-bottom: 1rem;
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+.brandName {
+  font-family: 'Satoshi', sans-serif;
+  font-weight: 500;
+  font-size: 1.25rem;
+  color: #111827;
 }
 
 .headerTitle {
+  font-family: 'Satoshi', sans-serif;
   font-size: 1.75rem;
   font-weight: 700;
   color: #111827;
-  margin-bottom: 2rem;
 }
 
 .tabs {
   display: flex;
-  gap: 0.5rem;
-  margin-bottom: 1.5rem;
+  background-color: #f3f4f6;
+  padding: 0rem;
+  border-radius: 0.5rem;
+  margin-bottom: 1rem;
 }
 
 .tabButton {
   flex: 1;
-  padding: 0.75rem;
+  padding: 0.75rem 1rem;
   border: none;
   background: none;
+  font-family: 'Satoshi', sans-serif;
   font-weight: 500;
-  color: var(--muted-foreground);
+  font-size: 0.875rem;
+  color: #6b7280;
   cursor: pointer;
-  border-bottom: 2px solid transparent;
+  border-radius: 0.375rem;
+  transition: all 0.2s ease;
 }
 
 .activeTab {
-  color: var(--primary);
-  border-bottom-color: var(--primary);
+  background-color: #2563eb;
+  color: #ffffff;
 }
 
 .tabContent {
+  position: relative;
+  padding-top: 1.5rem;
+  margin-top: 0.5rem;
   display: flex;
   flex-direction: column;
-  gap: 0.75rem;
+  gap: 1rem;
+}
+
+.tabContent::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -2.5rem;
+  right: -2.5rem;
+  height: 1px;
+  background-color: #e5e7eb;
 }
 
 .signInButton {
@@ -191,15 +226,18 @@
   border-radius: 0.5rem;
   background-color: white;
   color: #374151;
+  font-family: 'Satoshi', sans-serif;
   font-weight: 500;
   font-size: 0.9375rem;
   cursor: pointer;
-  transition: all 0.2s;
+  transition: all 0.15s ease;
 }
 
 .signInButton:hover {
   background-color: #f9fafb;
   border-color: #d1d5db;
+  transform: translateY(-1px);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
 }
 
 .buttonIcon {
@@ -211,12 +249,17 @@
   margin-top: 1.5rem;
   text-align: center;
   font-size: 0.875rem;
-  color: var(--muted-foreground);
+  color: #111827;
 }
 
 .privacyLink {
-  color: var(--primary);
-  text-decoration: underline;
+  color: #111827;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.privacyLink:hover {
+  color: #2563eb;
 }
 
 @media (min-width: 768px) {
@@ -224,8 +267,16 @@
     flex-direction: row;
   }
   
-  .leftSection, .rightSection {
-    width: 50%;
+  .leftSection {
+    display: flex; /* Show on desktop */
+    align-items: center;
+    justify-content: center;
+    width: 50%; /* Slightly smaller than right section */
+  }
+  
+  .rightSection {
+    width: 50%; /* Slightly larger than left section */
+    min-height: auto; /* Reset min-height */
   }
 }
 
