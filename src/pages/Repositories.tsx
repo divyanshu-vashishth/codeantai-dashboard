@@ -1,5 +1,5 @@
 import { Search, RotateCw, Plus, Database } from "lucide-react";
-import "./repositories.css";
+import "./Repositories.css";
 
 interface Repository {
   name: string;
