@@ -15,7 +15,7 @@ export const Sidebar = ({ setIsAuthenticated }: SidebarProps) => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const location = useLocation();
   const navigate = useNavigate();
-  
+  //  rendom function for handling auth state
   const handleLogout = () => {
     setIsAuthenticated(false);
     navigate('/sign-in');
