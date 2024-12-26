@@ -7,7 +7,6 @@
 .leftSection {
   display: none; 
   position: relative;
-  padding: 2rem;
   background-color: #ffffff;
 }
 
@@ -26,9 +25,11 @@
 .cardContainer {
   display: flex;
   flex-direction: column;
-  width: 470px;
+  width: 474px;
+  min-height: 322px;
   width: 100%;
   /* padding: 1 1rem; */
+  max-width: 474px;
 }
 
 .grayLogoContainer {
@@ -37,6 +38,8 @@
   left: 0rem;
   opacity: 0.5;
   width: 284px;
+  max-height: 319px;
+  width: 100%;
 
 }
 
