@@ -5,14 +5,14 @@
 }
 
 .leftSection {
-  display: none; 
+  display: none;
   position: relative;
   background-color: #ffffff;
 }
 
 .rightSection {
   flex: 1;
-  min-height: 100vh; 
+  min-height: 100vh;
   background-color: #fafafa;
   display: flex;
   flex-direction: column;
@@ -40,16 +40,12 @@
   width: 284px;
   max-height: 319px;
   width: 100%;
-
 }
 
 .grayLogo {
   height: auto;
   width: auto;
 }
-
-
-
 
 .logoContainer {
   display: flex;
@@ -63,18 +59,17 @@
 }
 
 .logoText {
-  font-family: 'Satoshi', sans-serif;
+  font-family: "Satoshi", sans-serif;
   font-weight: 500;
   font-size: 1.125rem;
   color: #111827;
 }
 
-
-
 .signInCard {
   width: 100%;
-  max-width: 672px;
-
+  width: 672px;
+  max-height: 602px;
+  height: 100%;
   background-color: #ffffff;
   border-radius: 1rem;
   border: 1px solid #e5e7eb;
@@ -85,7 +80,6 @@
 
 .cardHeader {
   text-align: center;
-  
 }
 
 .logoWithText {
@@ -99,30 +93,29 @@
 .headerLogo {
   width: 2rem;
   height: 2rem;
-
 }
 
 .brandName {
-  font-family: 'Satoshi', sans-serif;
+  font-family: "Satoshi", sans-serif;
   font-weight: 400;
   font-size: 1.5rem;
   color: #181d27;
 }
 
 .headerTitle {
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
   font-size: 2rem;
   font-weight: 600;
   color: #181d27;
-  margin-top: 3rem;
-  margin-bottom: 2rem;
+  margin-top: 2.5rem;
+  margin-bottom: 1.5rem;
 }
 
 .tabs {
   display: flex;
   background-color: #f3f4f6;
   padding: 0rem;
-  border : 1px solid #e5e7eb;
+  border: 1px solid #e5e7eb;
   border-radius: 0.5rem;
   margin-bottom: 1rem;
 }
@@ -132,7 +125,7 @@
   padding: 1rem 0.5rem;
   border: none;
   background: none;
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
   font-weight: 600;
   font-size: 0.875rem;
   color: #414651;
@@ -148,21 +141,23 @@
 
 .tabContent {
   position: relative;
-  padding-top: 2.5rem;
-  margin-top: 0.5rem;
+  padding-top: 2rem;
   display: flex;
   flex-direction: column;
   gap: 1rem;
 }
 
 .tabContent::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 1rem;
   left: -2rem;
   right: -2rem;
   height: 1px;
   background-color: #e5e7eb;
+}
+.signInButton:first-of-type {
+  margin-top: 0.25rem;
 }
 
 .signInButton {
@@ -178,7 +173,7 @@
   border: 1px solid #e5e7eb;
   border-radius: 0.5rem;
   background-color: white;
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
   color: #171717;
   font-weight: 600;
   font-size: 0.875rem;
@@ -294,7 +289,7 @@
   .pageContainer {
     flex-direction: row;
   }
-  
+
   .leftSection {
     display: flex;
     align-items: center;
@@ -302,7 +297,7 @@
     width: 50%;
     position: relative;
   }
-  
+
   .rightSection {
     width: 50%;
     min-height: 100vh;
@@ -310,7 +305,7 @@
 
   .cardContainer {
     padding: 0 1rem;
-  } 
+  }
 }
 
 /* Added styles for very small screens  */
