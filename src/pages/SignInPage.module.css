@@ -211,8 +211,7 @@
 
 @media (max-width: 768px) {
   .signInCard {
-    height: auto;
-    min-height: 322px;
+    height: 602px;
     margin: 1rem;
     padding: 1.5rem;
     max-width: 100%;
@@ -250,8 +249,7 @@
 
 @media (max-width: 480px) {
   .signInCard {
-    height: auto;
-    min-height: 322px;
+    height: 603px;
     padding: 1.25rem;
     margin: 0.75rem;
   }
@@ -317,6 +315,7 @@
 /* Added styles for very small screens  */
 @media (max-width: 360px) {
   .signInCard {
+    height: 603px;
     margin: 0.5rem;
     padding: 0.75rem;
   }
