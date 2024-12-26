@@ -28,6 +28,7 @@ npm install
 npm run dev
 ```
 Project structure:
+```
 codeantai-dashboard/
 ├── src/
 │ ├── assets/ # Icons and images
