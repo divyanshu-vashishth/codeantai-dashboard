@@ -9,7 +9,6 @@ import azure from "../assets/azure.svg";
 import authKey from "../assets/auth-key.svg";
 import styles from "./SignInPage.module.css";
 import leftIcon from "../assets/left-icon.svg";
-import iconSignIn from "../assets/sign-in.svg";
 
 interface SignInPageProps {
   setIsAuthenticated: (value: boolean) => void;
