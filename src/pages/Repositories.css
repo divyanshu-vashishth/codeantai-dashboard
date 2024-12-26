@@ -89,7 +89,7 @@
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  padding: 0.5rem 1rem;
+  padding: 0.625rem 1rem;
   border-radius: 0.375rem;
   font-size: 0.875rem;
   font-weight: 500;
@@ -152,9 +152,9 @@
   font-size: 0.75rem;
   padding: 0.1rem 0.25rem;
   border-radius: 0.75rem;
-  background: #eff6ff;
-  color: #2563eb;
-  border-color: deepskyblue;
+  background: #eff8ff;
+  color: #175cd3;
+  border-color: #b2ddef;
   border: 1px solid;
   font-weight: 500;
 }
@@ -177,7 +177,7 @@
   width: 0.5rem;
   height: 0.5rem;
   border-radius: 50%;
-  background: #2563eb;
+  background: #1570ef;
 }
 
 .size {
@@ -196,25 +196,26 @@
   }
 
   .header-actions {
-    flex-direction: column-reverse;
-    align-items: stretch;
+    flex-direction: row;
+    align-items: center;
+    gap: 0.75rem;
+    flex-wrap: wrap;
   }
 
   .search-container {
     width: 100%;
-    order: 2;
+    margin-top: 1rem;
   }
 
   .button-group {
-    order: 1; 
-    margin-left: 0; 
-    margin-bottom: 1rem;
-    width: 100%;
+    display: flex;
+    gap: 0.75rem;
+    width: auto;
   }
 
   .refresh-button,
   .add-button {
-    flex: 1;
+    flex: initial;
   }
 
   .repo-details {

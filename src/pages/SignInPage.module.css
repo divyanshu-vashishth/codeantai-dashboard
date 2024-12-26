@@ -14,19 +14,21 @@
 .rightSection {
   flex: 1;
   min-height: 100vh; 
-  /* padding: .5rem; */
   background-color: #fafafa;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
+  gap: 0.25rem;
+  padding: 1rem;
 }
 
 .cardContainer {
   display: flex;
   flex-direction: column;
-  max-width: 440px;
+  width: 470px;
   width: 100%;
-  padding: 0 1rem;
+  /* padding: 1 1rem; */
 }
 
 .grayLogoContainer {
@@ -34,36 +36,17 @@
   bottom: 0rem;
   left: 0rem;
   opacity: 0.5;
+  width: 284px;
+
 }
 
 .grayLogo {
-  width: 280px;
   height: auto;
+  width: auto;
 }
 
-.card {
-  background-color: white;
-  border: 1px solid #e5e7eb;
-  border-radius: 1rem;
-  padding-inline: 4rem;
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-}
 
-.statsCard {
-  border-width: 1px;
-}
 
-.issuesCard {
-  text-align: left;
-  background-color: #f9fafb;
-  border: none;
-}
-
-.cardContent {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-}
 
 .logoContainer {
   display: flex;
@@ -83,63 +66,21 @@
   color: #111827;
 }
 
-.statsGrid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 2rem;
-  text-align: center;
-  padding: 1rem 0;
-}
 
-.statItem {
-  display: flex;
-  flex-direction: column;
-  gap: 0.25rem;
-}
-
-.statValue {
-  font-weight: 700;
-  font-size: 1.5rem;
-  color: #111827;
-}
-
-.statLabel {
-  font-size: 0.875rem;
-  color: #6b7280;
-  margin-top: 0.5rem;
-}
-
-.issuesTitle {
-  font-size: 1rem;
-  font-weight: 600;
-  color: #6b7280;
-}
-
-.issuesValue {
-  font-size: 2.25rem;
-  font-weight: 700;
-  color: #111827;
-  line-height: 1.2;
-}
-
-.issuesIncrease {
-  font-size: 0.875rem;
-  color: #053a96;
-  font-weight: 600;
-}
 
 .signInCard {
   width: 100%;
-  max-width: 32rem;
-  padding: 2.5rem;
+  max-width: 672px;
+  min-height: 602px;
   background-color: #ffffff;
   border-radius: 1rem;
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  border: 1px solid #e5e7eb;
+  padding: 2rem;
 }
 
 .cardHeader {
   text-align: center;
-  margin-bottom: 2.5rem;
+  
 }
 
 .logoWithText {
@@ -151,54 +92,58 @@
 }
 
 .headerLogo {
-  width: 1.5rem;
-  height: 1.5rem;
+  width: 2rem;
+  height: 2rem;
+
 }
 
 .brandName {
   font-family: 'Satoshi', sans-serif;
-  font-weight: 500;
-  font-size: 1.25rem;
-  color: #111827;
+  font-weight: 400;
+  font-size: 1.5rem;
+  color: #181d27;
 }
 
 .headerTitle {
-  font-family: 'Satoshi', sans-serif;
-  font-size: 1.75rem;
-  font-weight: 700;
-  color: #111827;
+  font-family: 'Inter', sans-serif;
+  font-size: 2rem;
+  font-weight: 600;
+  color: #181d27;
+  margin-top: 3rem;
+  margin-bottom: 1rem;
 }
 
 .tabs {
   display: flex;
   background-color: #f3f4f6;
   padding: 0rem;
+  border : 1px solid #e5e7eb;
   border-radius: 0.5rem;
   margin-bottom: 1rem;
 }
 
 .tabButton {
   flex: 1;
-  padding: 0.75rem 1rem;
+  padding: 1rem 0.5rem;
   border: none;
   background: none;
-  font-family: 'Satoshi', sans-serif;
-  font-weight: 500;
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
   font-size: 0.875rem;
-  color: #6b7280;
+  color: #414651;
   cursor: pointer;
   border-radius: 0.375rem;
   transition: all 0.2s ease;
 }
 
 .activeTab {
-  background-color: #2563eb;
+  background-color: #1570ef;
   color: #ffffff;
 }
 
 .tabContent {
   position: relative;
-  padding-top: 1.5rem;
+  padding-top: 2.5rem;
   margin-top: 0.5rem;
   display: flex;
   flex-direction: column;
@@ -208,9 +153,9 @@
 .tabContent::before {
   content: '';
   position: absolute;
-  top: 0;
-  left: -2.5rem;
-  right: -2.5rem;
+  top: 1rem;
+  left: -2rem;
+  right: -2rem;
   height: 1px;
   background-color: #e5e7eb;
 }
@@ -218,17 +163,20 @@
 .signInButton {
   display: flex;
   align-items: center;
+  width: 100%;
+  max-width: 446px;
+  margin: auto;
+  height: 57px;
   justify-content: center;
   gap: 0.75rem;
-  width: 100%;
-  padding: 0.875rem;
+  padding: 0.75rem 1.25rem;
   border: 1px solid #e5e7eb;
   border-radius: 0.5rem;
   background-color: white;
-  color: #374151;
-  font-family: 'Satoshi', sans-serif;
-  font-weight: 500;
-  font-size: 0.9375rem;
+  font-family: 'Inter', sans-serif;
+  color: #171717;
+  font-weight: 600;
+  font-size: 0.875rem;
   cursor: pointer;
   transition: all 0.15s ease;
 }
@@ -262,36 +210,122 @@
   color: #2563eb;
 }
 
-@media (min-width: 768px) {
+@media (max-width: 768px) {
+  .signInCard {
+    min-height: auto;
+    margin: 0;
+  }
+
+  .cardContainer {
+    max-width: 100%;
+    padding: 0;
+  }
+
+  .headerTitle {
+    font-size: 1.75rem;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+  }
+
+  .signInButton {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .tabContent::before {
+    left: -1.5rem;
+    right: -1.5rem;
+  }
+
+  .tabs {
+    margin: 0 -0.5rem;
+  }
+
+  .rightSection {
+    padding: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .signInCard {
+    padding: 1.5rem;
+  }
+
+  .headerTitle {
+    font-size: 1.5rem;
+    margin-top: 1.5rem;
+  }
+
+  .brandName {
+    font-size: 1.25rem;
+  }
+
+  .headerLogo {
+    width: 1.75rem;
+    height: 1.75rem;
+  }
+
+  .tabContent {
+    padding-top: 2rem;
+  }
+
+  .tabContent::before {
+    left: -1rem;
+    right: -1rem;
+  }
+
+  .signInButton {
+    height: 48px;
+    padding: 0.625rem 1rem;
+    font-size: 0.875rem;
+  }
+
+  .rightSection {
+    padding: 0.75rem;
+  }
+}
+
+@media (min-width: 769px) {
   .pageContainer {
     flex-direction: row;
   }
   
   .leftSection {
-    display: flex; 
+    display: flex;
     align-items: center;
     justify-content: center;
-    width: 50%; 
+    width: 50%;
+    position: relative;
   }
   
   .rightSection {
-    width: 50%; 
-    min-height: auto; 
+    width: 50%;
+    min-height: 100vh;
+  }
+
+  .cardContainer {
+    padding: 0 1rem;
   }
 }
 
-.ssoButton {
-  background-color: #1570EF !important;
-  color: white !important;
-  border: none !important;
-}
+/* Add styles for very small screens */
+@media (max-width: 360px) {
+  .signInCard {
+    margin: 0.5rem;
+    padding: 0.75rem;
+  }
 
-.ssoButton:hover {
-  background-color: #1262D6 !important;
-}
+  .headerTitle {
+    font-size: 1.25rem;
+  }
 
-.tabSwitch {
-  background-color: #1570EF;
-  color: white;
+  .tabButton {
+    padding: 0.75rem 0.25rem;
+    font-size: 0.75rem;
+  }
+
+  .rightSection {
+    padding: 0.5rem;
+  }
 }
 

@@ -46,6 +46,7 @@
   border: 1px solid #e2e8f0;
   border-radius: 6px;
   background: transparent;
+  font-family: 'Inter', sans-serif;
   color: #1e293b;
   font-size: 0.875rem;
   cursor: pointer;
@@ -77,7 +78,7 @@
 }
 
 .sidebar-nav {
-  padding: 0.75rem;
+  padding: 0rem 1rem;
   display: flex;
   flex-direction: column;
   gap: 0.25rem;
@@ -92,13 +93,16 @@
   text-decoration: none;
   font-size: 0.875rem;
   border-radius: 6px;
-  margin: 0 0.75rem;
+  font-weight: 600;
 }
 
 .nav-icon {
   width: 20px;
   height: 20px;
-  color: #64748b;
+}
+
+.nav-item img.nav-icon {
+  filter: invert(51%) sepia(9%) saturate(1066%) hue-rotate(176deg) brightness(91%) contrast(87%);
 }
 
 .nav-item:hover,
@@ -107,15 +111,16 @@
   color: white;
 }
 
-.nav-item:hover .nav-icon,
-.nav-item.active .nav-icon {
-  color: white;
+.nav-item:hover img.nav-icon,
+.nav-item.active img.nav-icon {
   filter: brightness(0) invert(1);
 }
 
 .bottom {
   margin-top: auto;
   border-top: none;
+  padding: 0.5rem 0.75rem;
+  margin-bottom: 1rem;
 }
 
 .mobile-menu-button {

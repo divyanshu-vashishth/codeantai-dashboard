@@ -9,6 +9,7 @@ import azure from "../assets/azure.svg";
 import authKey from "../assets/auth-key.svg";
 import styles from "./SignInPage.module.css";
 import leftIcon from "../assets/left-icon.svg";
+import iconSignIn from "../assets/sign-in.svg";
 
 interface SignInPageProps {
   setIsAuthenticated: (value: boolean) => void;
@@ -45,12 +46,12 @@ export default function SignInPage({ setIsAuthenticated }: SignInPageProps) {
           <div className={styles.cardContent}>
             <div className={styles.tabs}>
               <button
-                onClick={() => setActiveTab("saas")}
                 className={`${styles.tabButton} ${
-                  activeTab === "saas" ? styles.tabSwitch : ""
+                  activeTab === "saas" ? styles.activeTab : ""
                 }`}
+                onClick={() => setActiveTab("saas")}
               >
-                SaaS
+                SAAS
               </button>
               <button
                 className={`${styles.tabButton} ${
@@ -136,16 +137,19 @@ export default function SignInPage({ setIsAuthenticated }: SignInPageProps) {
                 </>
               )}
             </div>
-            <div className={styles.privacyPolicy}>
+           
+          </div>
+          
+        </div>
+        <div className={styles.privacyPolicy}>
               By signing up you agree to the{" "}
               <Link to="/privacy" className={styles.privacyLink}>
                 Privacy Policy
               </Link>
               .
             </div>
-          </div>
-        </div>
       </div>
+      
     </div>
   );
 }

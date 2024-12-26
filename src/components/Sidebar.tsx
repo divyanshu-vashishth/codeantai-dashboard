@@ -2,8 +2,6 @@ import { useState } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { ChevronDown } from 'react-feather';
 import './Sidebar.css';
-
-// Import SVG icons
 import HomeIcon from '../assets/home.svg';
 import CodeReviewIcon from '../assets/ai-code-review.svg';
 import CloudIcon from '../assets/cloud.svg';
@@ -30,7 +28,7 @@ export const Sidebar = ({ setIsAuthenticated }: SidebarProps) => {
   };
 
   const navigation = [
-    { path: '/repositories', icon: HomeIcon, label: 'Repositories', isActive: true },
+    { path: '/repositories', icon: HomeIcon, label: 'Repositories' },
     { path: '/code-review', icon: CodeReviewIcon, label: 'AI Code Review' },
     { path: '/security', icon: CloudIcon, label: 'Cloud Security' },
     { path: '/how-to-use', icon: BookIcon, label: 'How to Use' },
@@ -62,7 +60,7 @@ export const Sidebar = ({ setIsAuthenticated }: SidebarProps) => {
               <div className="dropdown-menu">
                 <a href="/profile">Profile</a>
                 <a href="/settings">Settings</a>
-                <a href="/logout">Logout</a>
+                <a href="/support">Support</a>
               </div>
             )}
           </div>
