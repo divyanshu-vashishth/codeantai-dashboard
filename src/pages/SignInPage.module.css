@@ -71,11 +71,13 @@
 .signInCard {
   width: 100%;
   max-width: 672px;
-  min-height: 602px;
+
   background-color: #ffffff;
   border-radius: 1rem;
   border: 1px solid #e5e7eb;
-  padding: 2rem;
+  padding-inline: 2rem;
+  padding-top: 3rem;
+  padding-bottom: 1.5rem;
 }
 
 .cardHeader {
@@ -88,7 +90,7 @@
   align-items: center;
   justify-content: center;
   gap: 0.75rem;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1rem;
 }
 
 .headerLogo {
@@ -110,7 +112,7 @@
   font-weight: 600;
   color: #181d27;
   margin-top: 3rem;
-  margin-bottom: 1rem;
+  margin-bottom: 2rem;
 }
 
 .tabs {
@@ -305,10 +307,10 @@
 
   .cardContainer {
     padding: 0 1rem;
-  }
+  } 
 }
 
-/* Add styles for very small screens */
+/* Added styles for very small screens  */
 @media (max-width: 360px) {
   .signInCard {
     margin: 0.5rem;

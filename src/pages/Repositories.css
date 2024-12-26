@@ -154,8 +154,7 @@
   border-radius: 0.75rem;
   background: #eff8ff;
   color: #175cd3;
-  border-color: #b2ddef;
-  border: 1px solid;
+  border:#b2ddef 1px solid;
   font-weight: 500;
 }
 

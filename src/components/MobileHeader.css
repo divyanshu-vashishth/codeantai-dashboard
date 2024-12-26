@@ -118,16 +118,23 @@
   width: 100%;
   text-align: left;
   cursor: pointer;
+  font-weight: 600;
 }
 
-.nav-item:hover {
-  background: #2563eb;
+.nav-item img.nav-icon {
+  filter: invert(51%) sepia(9%) saturate(1066%) hue-rotate(176deg) brightness(91%) contrast(87%);
+}
+
+.nav-item:hover,
+.nav-item.active {
+  background: #1570EF;
   color: white;
   border-radius: 6px;
 }
 
-.nav-item:hover .nav-icon {
-  color: white;
+.nav-item:hover img.nav-icon,
+.nav-item.active img.nav-icon {
+  filter: brightness(0) invert(1);
 }
 
 .nav-icon {

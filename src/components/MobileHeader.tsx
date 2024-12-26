@@ -1,7 +1,14 @@
 import { useState } from 'react';
-import { Menu, X, ChevronDown, Home, Code, Cloud, HelpCircle, Settings, PhoneCall, LogOut } from 'react-feather';
-import { Link, useNavigate } from 'react-router-dom';
+import { Menu, X, ChevronDown } from 'lucide-react';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import Logo from '../assets/logo.svg';
+import HomeIcon from '../assets/home.svg';
+import CodeReviewIcon from '../assets/ai-code-review.svg';
+import CloudIcon from '../assets/cloud.svg';
+import BookIcon from '../assets/book.svg';
+import GearIcon from '../assets/gear.svg';
+import PhoneIcon from '../assets/phone.svg';
+import SignOutIcon from '../assets/sign-out.svg';
 import './MobileHeader.css';
 
 interface MobileHeaderProps {
@@ -9,14 +16,10 @@ interface MobileHeaderProps {
 }
 
 export const MobileHeader = ({ setIsAuthenticated }: MobileHeaderProps) => {
-  const [isSheetOpen, setIsSheetOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const location = useLocation();
   const navigate = useNavigate();
-
-  const toggleSheet = () => {
-    setIsSheetOpen(!isSheetOpen);
-    setIsDropdownOpen(false);
-  };
 
   const handleLogout = () => {
     setIsAuthenticated(false);
@@ -24,28 +27,31 @@ export const MobileHeader = ({ setIsAuthenticated }: MobileHeaderProps) => {
   };
 
   const navigation = [
-    { path: '/repositories', label: 'Repositories', icon: Home },
-    { path: '/code-review', label: 'AI Code Review', icon: Code },
-    { path: '/security', label: 'Cloud Security', icon: Cloud },
-    { path: '/how-to-use', label: 'How to Use', icon: HelpCircle },
-    { path: '/settings', label: 'Settings', icon: Settings },
-    { path: '/support', label: 'Support', icon: PhoneCall },
-    { label: 'Logout', icon: LogOut, onClick: handleLogout },
+    { path: '/repositories', icon: HomeIcon, label: 'Repositories' },
+    { path: '/code-review', icon: CodeReviewIcon, label: 'AI Code Review' },
+    { path: '/security', icon: CloudIcon, label: 'Cloud Security' },
+    { path: '/how-to-use', icon: BookIcon, label: 'How to Use' },
+    { path: '/settings', icon: GearIcon, label: 'Settings' },
+  ];
+
+  const bottomNav = [
+    { path: '/support', icon: PhoneIcon, label: 'Support' },
+    { label: 'Logout', icon: SignOutIcon, onClick: handleLogout },
   ];
 
   return (
     <>
       <header className="mobile-header">
-        <Link to="/repositories" className="mobile-logo">
+        <Link to="/" className="mobile-logo">
           <img src={Logo} alt="CodeAnt AI" />
           <span>CodeAnt AI</span>
         </Link>
-        <button onClick={toggleSheet} className="mobile-menu-trigger">
-          {isSheetOpen ? <X size={24} /> : <Menu size={24} />}
+        <button className="mobile-menu-trigger" onClick={() => setIsOpen(!isOpen)}>
+          {isOpen ? <X size={24} /> : <Menu size={24} />}
         </button>
       </header>
 
-      {isSheetOpen && (
+      {isOpen && (
         <div className="mobile-sheet">
           <div className="sheet-content">
             <div className="user-section">
@@ -58,23 +64,47 @@ export const MobileHeader = ({ setIsAuthenticated }: MobileHeaderProps) => {
               </button>
               {isDropdownOpen && (
                 <div className="dropdown-menu">
-                  <Link to="/profile">Profile</Link>
-                  <Link to="/settings">Settings</Link>
-                  <Link to="/support">Support</Link>
+                  <a href="/profile">Profile</a>
+                  <a href="/settings">Settings</a>
+                  <a href="/support">Support</a>
                 </div>
               )}
             </div>
-            
+
             <nav className="sheet-nav">
               {navigation.map((item) => (
+                <Link
+                  key={item.path}
+                  to={item.path}
+                  className={`nav-item ${location.pathname === item.path ? 'active' : ''}`}
+                  onClick={() => setIsOpen(false)}
+                >
+                  <img src={item.icon} alt={item.label} className="nav-icon" />
+                  <span>{item.label}</span>
+                </Link>
+              ))}
+
+              {bottomNav.map((item) => (
                 item.onClick ? (
-                  <button key={item.label} onClick={item.onClick} className="nav-item">
-                    <item.icon size={20} className="nav-icon" />
+                  <button
+                    key={item.label}
+                    onClick={() => {
+                      item.onClick();
+                      setIsOpen(false);
+                    }}
+                    className="nav-item"
+                  >
+                    <img src={item.icon} alt={item.label} className="nav-icon" />
                     <span>{item.label}</span>
                   </button>
                 ) : (
-                  <Link key={item.path} to={item.path} className="nav-item">
-                    <item.icon size={20} className="nav-icon" />
+                  <Link
+                    key={item.path}
+                    to={item.path!}
+                    className={`nav-item ${location.pathname === item.path ? 'active' : ''}`}
+                    onClick={() => setIsOpen(false)}
+                  >
+                    <img src={item.icon} alt={item.label} className="nav-icon" />
                     <span>{item.label}</span>
                   </Link>
                 )
