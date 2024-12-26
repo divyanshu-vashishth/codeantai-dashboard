@@ -92,29 +92,25 @@
   text-decoration: none;
   font-size: 0.875rem;
   border-radius: 6px;
-  margin: 0 0.5rem;
+  margin: 0 0.75rem;
 }
 
 .nav-icon {
   width: 20px;
   height: 20px;
+  color: #64748b;
 }
 
-.nav-item:hover {
-  background: #f1f5f9;
-}
-
-.nav-item:hover .nav-icon {
-  color: #64748b; 
-}
-
+.nav-item:hover,
 .nav-item.active {
-  background: #2563eb;
+  background: #1570EF;
   color: white;
 }
 
+.nav-item:hover .nav-icon,
 .nav-item.active .nav-icon {
-  color: white; 
+  color: white;
+  filter: brightness(0) invert(1);
 }
 
 .bottom {

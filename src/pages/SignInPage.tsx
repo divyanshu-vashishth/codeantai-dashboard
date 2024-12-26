@@ -45,12 +45,12 @@ export default function SignInPage({ setIsAuthenticated }: SignInPageProps) {
           <div className={styles.cardContent}>
             <div className={styles.tabs}>
               <button
-                className={`${styles.tabButton} ${
-                  activeTab === "saas" ? styles.activeTab : ""
-                }`}
                 onClick={() => setActiveTab("saas")}
+                className={`${styles.tabButton} ${
+                  activeTab === "saas" ? styles.tabSwitch : ""
+                }`}
               >
-                SAAS
+                SaaS
               </button>
               <button
                 className={`${styles.tabButton} ${

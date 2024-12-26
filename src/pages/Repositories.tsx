@@ -1,5 +1,7 @@
-import { Search, RotateCw, Plus, Database } from "lucide-react";
+import { Search, Database } from "lucide-react";
 import "./Repositories.css";
+import RefreshIcon from "../assets/refresh.svg";
+import PlusIcon from "../assets/plus.svg";
 
 interface Repository {
   name: string;
@@ -72,15 +74,15 @@ export default function Repositories() {
               <span className="repo-count">33 total repositories</span>
             </div>
             
-            <div className="button-group">
+            <div className="header-actions">
               <button className="refresh-button">
-                <RotateCw size={18} />
-                <span>Refresh All</span>
+                <img src={RefreshIcon} alt="Refresh" />
+                Refresh All
               </button>
               
               <button className="add-button">
-                <Plus size={18} />
-                <span>Add Repository</span>
+                <img src={PlusIcon} alt="Add" />
+                Add Repository
               </button>
             </div>
           </div>
