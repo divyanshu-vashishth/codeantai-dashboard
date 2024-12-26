@@ -14,7 +14,7 @@
 .rightSection {
   flex: 1;
   min-height: 100vh; 
-  padding: 1.5rem;
+  /* padding: .5rem; */
   background-color: #fafafa;
   display: flex;
   align-items: center;
@@ -24,8 +24,7 @@
 .cardContainer {
   display: flex;
   flex-direction: column;
-  /* gap: 1.5rem; */
-  max-width: 32rem;
+  max-width: 400px;
   width: 100%;
 }
 
@@ -45,7 +44,7 @@
   background-color: white;
   border: 1px solid #e5e7eb;
   border-radius: 1rem;
-  padding: 2rem;
+  padding-inline: 4rem;
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
 }
 

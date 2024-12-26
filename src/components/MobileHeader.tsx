@@ -60,7 +60,7 @@ export const MobileHeader = ({ setIsAuthenticated }: MobileHeaderProps) => {
                 <div className="dropdown-menu">
                   <Link to="/profile">Profile</Link>
                   <Link to="/settings">Settings</Link>
-                  <button onClick={handleLogout}>Logout</button>
+                  <Link to="/support">Support</Link>
                 </div>
               )}
             </div>

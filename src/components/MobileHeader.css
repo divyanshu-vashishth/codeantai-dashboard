@@ -27,8 +27,9 @@
 }
 
 .mobile-logo span {
-  font-size: 1.25rem; 
+  font-size: 1.25rem;
   font-weight: 500;
+  font-family: 'Satoshi', sans-serif;
 }
 
 .mobile-menu-trigger {

@@ -1,10 +1,18 @@
 import { useState } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
-import { ChevronDown, Menu } from 'react-feather';
+import { ChevronDown } from 'react-feather';
 import './Sidebar.css';
-import { Home, Code, Cloud, HelpCircle, Settings, PhoneCall , LogOut } from 'react-feather';
 
+// Import SVG icons
+import HomeIcon from '../assets/home.svg';
+import CodeReviewIcon from '../assets/ai-code-review.svg';
+import CloudIcon from '../assets/cloud.svg';
+import BookIcon from '../assets/book.svg';
+import GearIcon from '../assets/gear.svg';
+import PhoneIcon from '../assets/phone.svg';
+import SignOutIcon from '../assets/sign-out.svg';
 import Logo from '../assets/logo.svg';
+import { Menu } from 'lucide-react';
 
 interface SidebarProps {
   setIsAuthenticated: (value: boolean) => void;
@@ -22,16 +30,16 @@ export const Sidebar = ({ setIsAuthenticated }: SidebarProps) => {
   };
 
   const navigation = [
-    { path: '/repositories', icon: Home, label: 'Repositories', isActive: true },
-    { path: '/code-review', icon: Code, label: 'AI Code Review' },
-    { path: '/security', icon: Cloud, label: 'Cloud Security' },
-    { path: '/how-to-use', icon: HelpCircle, label: 'How to Use' },
-    { path: '/settings', icon: Settings, label: 'Settings' },
+    { path: '/repositories', icon: HomeIcon, label: 'Repositories', isActive: true },
+    { path: '/code-review', icon: CodeReviewIcon, label: 'AI Code Review' },
+    { path: '/security', icon: CloudIcon, label: 'Cloud Security' },
+    { path: '/how-to-use', icon: BookIcon, label: 'How to Use' },
+    { path: '/settings', icon: GearIcon, label: 'Settings' },
   ];
 
   const bottomNav = [
-    { path: '/support', icon: PhoneCall, label: 'Support' },
-    { label: 'Logout', icon: LogOut, onClick: handleLogout },
+    { path: '/support', icon: PhoneIcon, label: 'Support' },
+    { label: 'Logout', icon: SignOutIcon, onClick: handleLogout },
   ];
 
   return (
@@ -67,7 +75,7 @@ export const Sidebar = ({ setIsAuthenticated }: SidebarProps) => {
               to={item.path}
               className={`nav-item ${location.pathname === item.path ? 'active' : ''}`}
             >
-              <item.icon className="nav-icon" />
+              <img src={item.icon} alt={item.label} className="nav-icon" />
               <span>{item.label}</span>
             </Link>
           ))}
@@ -81,7 +89,7 @@ export const Sidebar = ({ setIsAuthenticated }: SidebarProps) => {
                 onClick={item.onClick}
                 className="nav-item"
               >
-                <item.icon className="nav-icon" />
+                <img src={item.icon} alt={item.label} className="nav-icon" />
                 <span>{item.label}</span>
               </button>
             ) : (
@@ -90,7 +98,7 @@ export const Sidebar = ({ setIsAuthenticated }: SidebarProps) => {
                 to={item.path!}
                 className="nav-item"
               >
-                <item.icon className="nav-icon" />
+                <img src={item.icon} alt={item.label} className="nav-icon" />
                 <span>{item.label}</span>
               </Link>
             )
